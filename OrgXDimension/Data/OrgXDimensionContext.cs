@@ -8,6 +8,10 @@ namespace OrgXDimension.Models
 {
     public class OrgXDimensionContext : DbContext
     {
+        public OrgXDimensionContext()
+        {
+        }
+
         public OrgXDimensionContext (DbContextOptions<OrgXDimensionContext> options)
             : base(options)
         {

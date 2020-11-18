@@ -16,9 +16,11 @@ namespace OrgXDimension.Controllers
 {
     public class HomeController : Controller
     {
-
+       // private readonly OrgXDimensionContext _context;
+        private readonly OrgXDimensionContext db = new OrgXDimensionContext(); 
         public IActionResult Index()
         {
+
             
             return View();
         }
