@@ -16,14 +16,10 @@ namespace OrgXDimension.Controllers
 {
     public class HomeController : Controller
     {
-        //private OrgXDimensionContext db = new OrgXDimensionContext();
+
         public IActionResult Index()
         {
-            //DashboardViewModel dashboard = new DashboardViewModel();
-
-            //dashboard.job_count = db.JobRole.Count();
-            //dashboard.gender_count = db.Gender.Count();
-            //dashboard.mary_count = db.MaritalStatus.Count();
+            
             return View();
         }
 
