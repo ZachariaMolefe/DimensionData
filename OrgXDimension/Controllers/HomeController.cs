@@ -12,10 +12,15 @@ using OrgXDimension.ViewModel;
 using OrgXDimension.Migrations;
 using OrgXDimension.Data.Migrations;
 using OrgXDimension.Data;
+using Microsoft.AspNetCore.Authorization;
+
+
 namespace OrgXDimension.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+        
        // private readonly OrgXDimensionContext _context;
         private readonly OrgXDimensionContext db = new OrgXDimensionContext(); 
         public IActionResult Index()

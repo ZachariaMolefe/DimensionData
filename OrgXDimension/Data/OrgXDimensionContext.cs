@@ -18,5 +18,6 @@ namespace OrgXDimension.Models
         }
 
         public DbSet<OrgXDimension.Models.ApplicatonItems> ApplicatonItems { get; set; }
+        public object JobRole { get; internal set; }
     }
 }
