@@ -28,23 +28,24 @@ namespace OrgXDimension
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string constring = "Data Source=orgxdimension.database.windows.net;User ID=29088089@student365.msfed.nwu.ac.za;Password=********;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;Authentication=;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString(constring)));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<OrgXDimensionContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("OrgXDimensionContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString(constring)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
